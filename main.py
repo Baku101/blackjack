@@ -1,0 +1,1 @@
+#sprawdzy czy dziala es
