@@ -32,6 +32,11 @@ class Button:
         if self.hitbox.collidepoint(pygame.mouse.get_pos()):
             if pygame.mouse.get_pressed()[0]:
                 return True
+    def draw(self, window):
+        if self.hitbox.collidepoint(pygame.mouse.get_pos()):
+            window.blit(self.hovered_button_image, (self.x_cord, self.y_cord))
+        else:
+            window.blit(self.button_image, (self.x_cord, self.y_cord))
  
 def wygrales():
 
