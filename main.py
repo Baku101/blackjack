@@ -12,6 +12,7 @@ def level_one(iloscTali):
     run=True
     clock=0
     punkty=0
+    tlo_gra=pygame.image.load("zdjecia\Beznazwy.png")
     punktyBrukiera=0
     kartygracza=0
     punktyGracza=0
