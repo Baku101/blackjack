@@ -43,4 +43,13 @@ def level_one(iloscTali):
 
 
 
-        window.blit(ilosc_punktow_aktualna, (0, 400))
+        window.blit(ilosc_punktow_aktualna, (0, 400)
+def main(): #to jest menu
+
+    wygrana=0
+    remis=0
+    przegrana=0
+    clock=0
+    run=True
+  
+                    
