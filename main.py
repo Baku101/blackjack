@@ -96,10 +96,13 @@ def main(): #to jest menu
            if y==1:
                remis+=1
            if plik1.writable():
-                 if reser_button.tick():
-            wygrana=0
-            przegrana=0
-            remis=0
+               plik1.write(str(wygrana)+"\n")
+               plik1.write(str(przegrana)+"\n")
+               plik1.write(str(remis)+"\n")
+       if reser_button.tick():
+          wygrana=0
+          przegrana=0
+          remis=0
 
         window.blit(tlo_menu, (0, 0))
         window.blit(przegranPunktyM, (450, 210))
