@@ -58,7 +58,7 @@ class Karta:
         self.y_cord = y
         self.kolor = kolor
         self.figura = figura
-        self.image = pygame.image.load(f"D:\karty\{figura}{kolor}.png")
+        self.image = pygame.image.load(f"zdjecia\{figura}{kolor}.png")
     
     def draw(self, window):
         window.blit(self.image, (self.x_cord, self.y_cord))
@@ -66,7 +66,7 @@ class Karta:
 def wygrales():
 
     time.sleep(2.5)
-    wygrana=pygame.image.load("D:\karty\ptlowybranej.png")
+    wygrana=pygame.image.load("zdjecia\ptlowybranej.png")
     window.blit(wygrana, (-100, 0))
     koniec = pygame.font.Font.render(pygame.font.SysFont("arial", 170), "WYGRALES", True, (0, 0, 0))
     window.blit(koniec, (0, 400))
@@ -75,7 +75,7 @@ def wygrales():
 
 def remis():
     time.sleep(2.5)
-    remis = pygame.image.load("D:\karty\wremis.jpg")
+    remis = pygame.image.load("zdjecia\wremis.jpg")
     window.blit(remis, (0, 0))
     koniec = pygame.font.Font.render(pygame.font.SysFont("arial", 170), "remis", True, (0, 0, 0))
     window.blit(koniec, (0, 0))
@@ -84,9 +84,9 @@ def remis():
 
 def przegrales(punktyGracza, punktyBrukiera):
     time.sleep(2)
-    tlo_gra = pygame.image.load("D:\Beznazwy.png")
+    tlo_gra = pygame.image.load("zdjecia\Beznazwy.png")
     window.blit(tlo_gra, (0, 0))
-    matrix = pygame.image.load("D:\karty\poop.png")
+    matrix = pygame.image.load("zdjecia\poop.png")
     window.blit(matrix, (-250, 0))
     if(punktyGracza>21):
 
