@@ -50,7 +50,7 @@ def main(): #to jest menu
     remis=0
     przegrana=0
     clock=0
-    plik1=open("D:\karty\zapisyWPR.txt", "r")
+    plik1=open("zapisyWPR.txt", "r")
 
     if plik1.readable():
         linesSprawdza = plik1.readlines()
@@ -64,15 +64,14 @@ def main(): #to jest menu
 
 
 
-    matrix=pygame.image.load("D:\karty\poop.png")
-    tlo_menu = pygame.image.load("D:\menu.png")
+    matrix=pygame.image.load("zdjecia\poop.png")
+    tlo_menu = pygame.image.load("zdjecia\menu.png")
     run=True
-    play_button=Button(100, 200,"D:\przycisk.png", "D:\przycisk_hovered.png")
-    tworcy_butoon=Button(100, 420, "D:\karty\zdjtworcy.png", "D:\karty\zdjtworcy1.png")
+    play_button=Button(100, 200,"zdjecia\przycisk.png", "zdjecia\przycisk_hovered.png")
+    tworcy_butoon=Button(100, 420, "zdjecia\zdjtworcy.png", "zdjecia\zdjtworcy1.png")
 
     iloscTali=1
     window.blit(tlo_menu, (0, 0))
-    plik1 = open("D:\karty\zapisyWPR.txt", "w")
+    plik1 = open("zapisyWPR.txt", "w")
     ###
-    reser_button = Button(100, 300, "D:\karty\wreser.png", "D:\karty\wreset1.png")
-    
+    reser_button = Button(100, 300, "zdjecia\wreser.png", "zdjecia\wreset1.png")
