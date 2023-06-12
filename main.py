@@ -5,7 +5,7 @@ window = pygame.display.set_mode((800, 600)) #tworzy okno
 pygame.font.init()
 
 def level_one(iloscTali):
-  talia=Talia(iloscTali)
+    talia=Talia(iloscTali)
     PrzyciskPasu=True
     punktyZAsemGracza=0
     punktyZAsemBrukiera=0
@@ -23,3 +23,14 @@ def level_one(iloscTali):
     last_created_time = time.time()
     iloscpostaci=0
     start_time = pygame.time.get_ticks()
+    while run:
+    
+        current_time = time.time()
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+
+
+        keys = pygame.key.get_pressed()
+        window.fill((181,11,11))
+        window.blit(tlo_gra, (0, 0))
