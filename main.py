@@ -81,7 +81,12 @@ def main(): #to jest menu
                 plik1.close()
                 run = False
                     
-        ###
+        wygranapunkyM = pygame.font.Font.render(pygame.font.SysFont("arial", 50), str(wygrana) + ("-wygranych"), True,
+                                                (0, 0, 0))
+        przegranPunktyM = pygame.font.Font.render(pygame.font.SysFont("arial", 50), str(przegrana) + ("-przegranych"),
+                                                  True, (0, 0, 0))
+        remisPunktyM = pygame.font.Font.render(pygame.font.SysFont("arial", 50), str(remis) + ("-remis"), True,
+                                               (0, 0, 0))
         if play_button.tick():
            y=level_one(iloscTali)
            if y==5:
