@@ -112,6 +112,6 @@ def przegrales(punktyGracza, punktyBrukiera):
     time.sleep(5)
 def wkzdj(kolor, liczba):
 
-    nazwa_pliku = f"D:\karty\{liczba}{kolor}.png"
+    nazwa_pliku = f"zdjecia\{liczba}{kolor}.png"
 
     return nazwa_pliku
