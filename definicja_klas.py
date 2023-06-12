@@ -47,7 +47,10 @@ class Talia:
                 for wartosc in range(2, 14):
                     print(wartosc)
                     self.karty.append((kolor, wartosc))
-            
+    def losuj_karte(self):
+        karta = random.choice(self.karty)
+        self.karty.remove(karta)
+        return (karta[0], karta[1])            
             
 def wygrales():
 
