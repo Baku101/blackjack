@@ -51,7 +51,16 @@ class Talia:
         karta = random.choice(self.karty)
         self.karty.remove(karta)
         return (karta[0], karta[1])            
-            
+
+class Karta:
+    def __init__(self, kolor, figura, x=700, y=500):
+        self.x_cord = x
+        self.y_cord = y
+        self.kolor = kolor
+        self.figura = figura
+        self.image = pygame.image.load(f"D:\karty\{figura}{kolor}.png")    
+    
+    
 def wygrales():
 
     time.sleep(2.5)
