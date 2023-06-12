@@ -73,5 +73,39 @@ def main(): #to jest menu
     iloscTali=1
     window.blit(tlo_menu, (0, 0))
     plik1 = open("zapisyWPR.txt", "w")
-    ###
-    reser_button = Button(100, 300, "zdjecia\wreser.png", "zdjecia\wreset1.png")
+    while run:
+        reser_button = Button(100, 300, "zdjecia\wreser.png", "zdjecia\wreset1.png")
+        clock += pygame.time.Clock().tick(60) / 1000  # maksymalnie 60 fps
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                plik1.close()
+                run = False
+                    
+        ###
+        if play_button.tick():
+           y=level_one(iloscTali)
+           if y==5:
+               wygrana+=1
+           if y==7:
+               przegrana+=1
+           if y==1:
+               remis+=1
+           if plik1.writable():
+                 if reser_button.tick():
+            wygrana=0
+            przegrana=0
+            remis=0
+
+        window.blit(tlo_menu, (0, 0))
+        window.blit(przegranPunktyM, (450, 210))
+        window.blit(wygranapunkyM, (450, 280))
+        window.blit(remisPunktyM, (450, 350))
+        tworcy_butoon.draw(window)
+        reser_button.draw(window)
+        play_button.draw(window)
+        pygame.display.update()
+
+if __name__=="__main__":
+
+    main()
+       
