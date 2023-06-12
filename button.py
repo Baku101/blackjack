@@ -20,6 +20,9 @@ liczba_talii = slider.getValue()
 
 #ustawienie zdjęcia jako tła
 current_dir = os.path.dirname(__file__)
-background_path = os.path.join(current_dir, "bgg.jpg")
+background_path = os.path.join(current_dir, "bg.jpg")
 background_image = pygame.image.load(background_path)
 background_image = pygame.transform.scale(background_image, (300, 170))
+
+#wyswietlanie zdjecia jako tlo na ekranie
+    win.blit(background_image, (0, 0))
