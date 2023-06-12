@@ -24,5 +24,30 @@ background_path = os.path.join(current_dir, "bg.jpg")
 background_image = pygame.image.load(background_path)
 background_image = pygame.transform.scale(background_image, (300, 170))
 
+run = True
+while run:
+    events = pygame.event.get()
+    for event in events:
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            run = False
+            quit()
+
 #wyswietlanie zdjecia jako tlo na ekranie
     win.blit(background_image, (0, 0))
+    
+ # dodanie napisu nad suwakiem
+    font = pygame.font.Font(None, 30)
+    text = font.render("Wybierz liczbę talii", True, (255, 255, 255))
+    win.blit(text, (55, 20))
+
+# dodanie skali dla suwaka
+    font = pygame.font.Font(None, 16)
+    for i in range(1, 9):
+        text = font.render(str(i), True, (0, 0, 0))
+        x = 75 + ((i - 1) / 7) * 150
+        win.blit(text, (x, 75))
+
+    pygame_widgets.update(events)
+    pygame.display.update()
+   
