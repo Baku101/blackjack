@@ -21,9 +21,9 @@ def odswiez(punktyGracza, punktyBrukiera, window):
     window.blit(ilosc_punktow_aktualna, (0, 400))
     
 class Button:
-def __init__(self, x_cord, y_cord, zdj, zdj1):
-     self.x_cord = x_cord
-     self.y_cord = y_cord
-     self.button_image = pygame.image.load(zdj)
-     self.hovered_button_image = pygame.image.load(zdj1)
-     self.hitbox = pygame.Rect(self.x_cord, self.y_cord, self.button_image.get_width(), self.button_image.get_he
+     def __init__(self, x_cord, y_cord, zdj, zdj1):
+        self.x_cord = x_cord
+        self.y_cord = y_cord
+        self.button_image = pygame.image.load(zdj)
+        self.hovered_button_image = pygame.image.load(zdj1)
+        self.hitbox = pygame.Rect(self.x_cord, self.y_cord, self.button_image.get_width(), self.button_image.get_he
