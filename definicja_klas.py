@@ -37,7 +37,18 @@ class Button:
             window.blit(self.hovered_button_image, (self.x_cord, self.y_cord))
         else:
             window.blit(self.button_image, (self.x_cord, self.y_cord))
- 
+
+class Talia:
+    def __init__(self, ilosc_talii=1):
+        self.ilosc_talii = ilosc_talii
+        self.karty = []
+        for _ in range(ilosc_talii):
+            for kolor in ['k', 'p', 't', 'k']:
+                for wartosc in range(2, 14):
+                    print(wartosc)
+                    self.karty.append((kolor, wartosc))
+            
+            
 def wygrales():
 
     time.sleep(2.5)
