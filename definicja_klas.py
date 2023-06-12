@@ -28,7 +28,7 @@ class Button:
         self.hovered_button_image = pygame.image.load(zdj1)
         self.hitbox = pygame.Rect(self.x_cord, self.y_cord, self.button_image.get_width(), self.button_image.get_he
  
- def wygrales():
+def wygrales():
 
     time.sleep(2.5)
     wygrana=pygame.image.load("D:\karty\ptlowybranej.png")
