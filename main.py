@@ -24,7 +24,8 @@ def level_one(iloscTali):
     iloscpostaci=0
     start_time = pygame.time.get_ticks()
     while run:
-    
+        rewerse = pygame.image.load("zdjecia\wrew.png")
+        cofanie_button = Button(600, 50, "zdjecia\cofanie.png", "zdjecia\cofanie1.png")
         current_time = time.time()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
