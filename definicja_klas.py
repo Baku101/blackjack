@@ -58,9 +58,11 @@ class Karta:
         self.y_cord = y
         self.kolor = kolor
         self.figura = figura
-        self.image = pygame.image.load(f"D:\karty\{figura}{kolor}.png")    
+        self.image = pygame.image.load(f"D:\karty\{figura}{kolor}.png")
     
-    
+    def draw(self, window):
+        window.blit(self.image, (self.x_cord, self.y_cord))
+
 def wygrales():
 
     time.sleep(2.5)
