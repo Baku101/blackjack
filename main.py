@@ -50,6 +50,29 @@ def main(): #to jest menu
     remis=0
     przegrana=0
     clock=0
+    plik1=open("D:\karty\zapisyWPR.txt", "r")
+
+    if plik1.readable():
+        linesSprawdza = plik1.readlines()
+        if len(linesSprawdza) >= 3:
+            plik1.seek(0)
+            lines = plik1.readlines()
+            last_three_lines = lines[-3:]
+            wygrana=int(last_three_lines[0])
+            przegrana=int(last_three_lines[1])
+            remis=int(last_three_lines[2])
+
+
+
+    matrix=pygame.image.load("D:\karty\poop.png")
+    tlo_menu = pygame.image.load("D:\menu.png")
     run=True
-  
-                    
+    play_button=Button(100, 200,"D:\przycisk.png", "D:\przycisk_hovered.png")
+    tworcy_butoon=Button(100, 420, "D:\karty\zdjtworcy.png", "D:\karty\zdjtworcy1.png")
+
+    iloscTali=1
+    window.blit(tlo_menu, (0, 0))
+    plik1 = open("D:\karty\zapisyWPR.txt", "w")
+    ###
+    reser_button = Button(100, 300, "D:\karty\wreser.png", "D:\karty\wreset1.png")
+    
