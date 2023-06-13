@@ -316,6 +316,15 @@ if( PrzyciskPasu==True and len(tablicaObiektow)>=4):
                                 run = False
                             last_created_time = current_time
                             return 7
+                    if(punktyBrukiera<21 and punktyGracza<21 and punktyBrukiera>punktyGracza):
+                        for karta in tablicaObiektow:
+                            karta.draw(window)
+                            pygame.display.update()
+
+                        x = przegrales(punktyGracza, punktyBrukiera)
+                        if x == 7:
+                            run = False
+                        return 7
 
 
 def main(): #to jest menu
