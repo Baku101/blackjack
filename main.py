@@ -146,7 +146,125 @@ def level_one(iloscTali):
                     if x == 7:
                         run = False
                     return 7
+if( PrzyciskPasu==True and len(tablicaObiektow)>=4):
 
+            elapsed_time = (pygame.time.get_ticks() - start_time) / 1000
+
+            #przycisk passu tworzenie
+            przyciskPassu=Button(30,200, "D:\karty\pass.png", "D:\karty\pass1.png")
+            przyciskPassu.draw(window)
+
+            if(przyciskPassu.tick()):
+                przyciskDoboruBool=False
+                PrzyciskPasu=False
+                #brukier tworzy 2 swoja karte
+                a = talia.losuj_karte()
+                if (int(a[1]) == 14):
+                    punktyZAsemBrukiera+= 10
+                    punktyBrukiera += 1
+                else:
+                    punktyZAsemBrukiera += get_wartosc(int(a[1]))
+                    punktyBrukiera += get_wartosc(int(a[1]))
+                print("BBBB Z asem ", punktyZAsemBrukiera)
+                print("BBB Bez asa ", punktyBrukiera)
+                karta1 = Karta(a[0], a[1], 410, 50)
+                tablicaObiektow.append(karta1)
+                tablicaObiektowBrukier.append(karta1)
+                if(punktyBrukiera>punktyGracza and punktyBrukiera<22):
+                    if current_time - last_created_time > 1.0:
+                        for karta in tablicaObiektow:
+                            karta.draw(window)
+                            pygame.display.update()
+
+                        x = przegrales(punktyGracza, punktyBrukiera)
+                        if x == 7:
+                            run = False
+                        return 7
+
+                if(punktyBrukiera==punktyGracza):
+                    for karta in tablicaObiektow:
+                        karta.draw(window)
+                        pygame.display.update()
+
+                    x=remis()
+                    if x==1:
+                        run=False
+                    return 1
+                if (punktyBrukiera > 21):
+                    for karta in tablicaObiektow:
+                        karta.draw(window)
+                        pygame.display.update()
+                    ilosc_punktow_aktualna = pygame.font.Font.render(pygame.font.SysFont("arial", 200),
+                                                                     str(punktyGracza), True,
+                                                                     (0, 0, 0))
+                    ilosc_punktow_aktualna_brukiera = pygame.font.Font.render(pygame.font.SysFont("arial", 200),
+                                                                              str(punktyBrukiera), True, (0, 0, 0))
+                    window.blit(ilosc_punktow_aktualna_brukiera, (0, 0))
+                    window.blit(ilosc_punktow_aktualna, (0, 400))
+                    x=wygrales()
+                    if x==7:
+                        run=False
+                    return 7
+                if(punktyBrukiera>punktyGracza and len(tablicaObiektow)>4 and punktyBrukiera<22):
+                    if current_time - last_created_time > 1.0:
+                        for karta in tablicaObiektow:
+                            karta.draw(window)
+                            pygame.display.update()
+
+                        x = przegrales(punktyGracza, punktyBrukiera)
+                        if x == 7:
+                            run = False
+                        return 7
+                #brukier do tego momentu stworzyl 2 karte swoja
+                if(punktyBrukiera==punktyGracza):
+                    if current_time - last_created_time > 1.0:
+                        for karta in tablicaObiektow:
+                            karta.draw(window)
+                            pygame.display.update()
+
+                        x = remis()
+                        if x == 1:
+                            run = False
+                        last_created_time = current_time
+                        return 1
+                if(punktyBrukiera>punktyGracza and punktyBrukiera<21 and punktyGracza<21):
+                    if current_time - last_created_time > 1.0:
+                        for karta in tablicaObiektow:
+                            karta.draw(window)
+                            pygame.display.update()
+                        ilosc_punktow_aktualna = pygame.font.Font.render(pygame.font.SysFont("arial", 200),
+                                                                         str(punktyGracza), True,
+                                                                         (0, 0, 0))
+                        ilosc_punktow_aktualna_brukiera = pygame.font.Font.render(pygame.font.SysFont("arial", 200),
+                                                                                  str(punktyBrukiera), True, (0, 0, 0))
+                        window.blit(ilosc_punktow_aktualna_brukiera, (0, 0))
+                        window.blit(ilosc_punktow_aktualna, (0, 400))
+                        x = przegrales(punktyGracza, punktyBrukiera)
+                        if x == 7:
+                            run = False
+                        last_created_time = current_time
+                        return 7
+                for karta in tablicaObiektow:
+                    karta.draw(window)
+                    pygame.display.update()
+                if (len(tablicaObiektowBrukier) > 1 and punktyBrukiera >= punktyGracza and punktyBrukiera < 22):
+                    if current_time - last_created_time > 1.0:
+                        for karta in tablicaObiektow:
+                            karta.draw(window)
+                            pygame.display.update()
+                        ilosc_punktow_aktualna = pygame.font.Font.render(pygame.font.SysFont("arial", 200),
+                                                                         str(punktyGracza), True,
+                                                                         (0, 0, 0))
+                        ilosc_punktow_aktualna_brukiera = pygame.font.Font.render(pygame.font.SysFont("arial", 200),
+                                                                                  str(punktyBrukiera), True, (0, 0, 0))
+                        window.blit(ilosc_punktow_aktualna_brukiera, (0, 0))
+                        window.blit(ilosc_punktow_aktualna, (0, 400))
+                        x = przegrales(punktyGracza, punktyBrukiera)
+                        if x == 7:
+                            run = False
+                        return 7
+                        last_created_time = current_time
+                    
 def main(): #to jest menu
 
     wygrana=0
