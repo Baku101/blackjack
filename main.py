@@ -44,6 +44,20 @@ def level_one(iloscTali):
 
 
         window.blit(ilosc_punktow_aktualna, (0, 400)
+        if(len(tablicaObiektow)<2):
+            losujkartePrzycisk = Button(600, 200, "D:\karty\przyciskLOS.png", "D:\karty\przyciskLOS1.png")
+
+            losujkartePrzycisk.draw(window)
+
+        if (punktyGracza < 21 and len(tablicaObiektow) > 4):
+            cofanie_button.draw(window)
+            if (cofanie_button.tick()):
+                cofanie_button.draw(window)
+                if cofanie_button.tick():
+                    iloscpostaci-=1
+                    kartygracza -= 1
+                    ostatniaKarta = tablicaObiektow.pop()
+                    punktyGracza -= int(ostatniaKarta.figura)
 def main(): #to jest menu
 
     wygrana=0
