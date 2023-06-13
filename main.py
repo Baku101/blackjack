@@ -58,6 +58,25 @@ def level_one(iloscTali):
                     kartygracza -= 1
                     ostatniaKarta = tablicaObiektow.pop()
                     punktyGracza -= int(ostatniaKarta.figura)
+        if losujkartePrzycisk.tick() and len(tablicaObiektow)<2:
+
+            if current_time - last_created_time > 1.0:  # utwórz nowy obiekt co 1 sekundę
+                x=talia.losuj_karte()
+
+                karta1 = Karta(x[0], x[1], iloscpostaci*110+300, 400) #tworzy dwie pierwsze nasze karty
+                tablicaObiektow.append(karta1)
+                last_created_time = current_time
+                iloscpostaci += 1
+                print(x[1])
+                if (int(x[1]) == 14):
+                    punktyZAsemGracza += 10
+                    punktyGracza+=1
+                else:
+                    punktyZAsemGracza += get_wartosc(int(x[1]))
+                    punktyGracza+=get_wartosc(int(x[1]))
+                print("Z asem ", punktyZAsemGracza)
+                print(" Bez asa ", punktyGracza)
+
 def main(): #to jest menu
 
     wygrana=0
