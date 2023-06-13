@@ -335,7 +335,7 @@ def level_one(iloscTali):
                             if x == 5:
                                 run = False
                             return 5
-                     if(punktyBrukiera==punktyGracza):
+                    if(punktyBrukiera==punktyGracza):
                         for karta in tablicaObiektow:
                             karta.draw(window)
                             pygame.display.update()
@@ -432,18 +432,18 @@ def level_one(iloscTali):
                                 run = False
                             return 5
 
-        if (punktyBrukiera == 21):
-            ilosc_punktow_aktualna = pygame.font.Font.render(pygame.font.SysFont("arial", 200), str(punktyGracza), True,
+    if (punktyBrukiera == 21):
+        ilosc_punktow_aktualna = pygame.font.Font.render(pygame.font.SysFont("arial", 200), str(punktyGracza), True,
                                                              (0, 0, 0))
-            ilosc_punktow_aktualna_brukiera = pygame.font.Font.render(pygame.font.SysFont("arial", 200),
+        ilosc_punktow_aktualna_brukiera = pygame.font.Font.render(pygame.font.SysFont("arial", 200),
                                                                       str(punktyBrukiera), True, (0, 0, 0))
-            window.blit(ilosc_punktow_aktualna_brukiera, (0, 0))
-            window.blit(ilosc_punktow_aktualna, (0, 400))
+        window.blit(ilosc_punktow_aktualna_brukiera, (0, 0))
+        window.blit(ilosc_punktow_aktualna, (0, 400))
 
-            x = przegrales(punktyGracza, punktyBrukiera)
-            if x==7:
-                run=False
-            return 7
+        x = przegrales(punktyGracza, punktyBrukiera)
+        if x==7:
+            run=False
+        return 7
 
 
         #print(len(tablicaObiektow))
