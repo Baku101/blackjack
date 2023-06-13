@@ -76,6 +76,76 @@ def level_one(iloscTali):
                     punktyGracza+=get_wartosc(int(x[1]))
                 print("Z asem ", punktyZAsemGracza)
                 print(" Bez asa ", punktyGracza)
+          if(len(tablicaObiektow)==2): #1 karta brukiera
+            if current_time - last_created_time > 1.0:
+                p=talia.losuj_karte()
+                if (int(p[1]) == 14):
+                    punktyZAsemBrukiera += 10
+                    punktyBrukiera+=1
+                else:
+                    punktyZAsemBrukiera += get_wartosc(int(p[1]))
+                    punktyBrukiera+=get_wartosc(int(p[1]))
+                print("Z asem ", punktyZAsemBrukiera)
+                print(" Bez asa ", punkty)
+
+
+                karta1 = Karta(p[0], p[1], 300, 50)
+                tablicaObiektow.append(karta1)
+                tablicaObiektowBrukier.append(karta1)
+                last_created_time = current_time
+
+
+        if(len(tablicaObiektow)==3):
+
+            #window.blit(rewerse, (0, 0))
+            g=["wrew", ""]
+            karta1=Karta(g[0], g[1], 410, 50)
+            tablicaObiektow.append(karta1)
+
+        if (punktyGracza > 21):
+            for karta in tablicaObiektow:
+                karta.draw(window)
+                pygame.display.update()
+            przegrales()
+            if x == 7:
+                run = False
+            return 7
+
+        if(punkty<21 and len(tablicaObiektow)>=4 and len(tablicaObiektow)<6 and przyciskDoboruBool==True):
+
+            #x=losuj_karte_pocztek(karty2, kolory2)
+            przyciskDobierania=Button(600, 200, "D:\karty\dobierz.png", "D:\karty\dobierz1.png")
+            przyciskDobierania.draw(window)
+            if(przyciskDobierania.tick()):
+                if current_time - last_created_time > 1.0:  # utwórz nowy obiekt co 1 sekundę
+
+
+                    iloscpostaci+=1
+                    print(iloscpostaci)
+                    h=talia.losuj_karte()
+                    karta5 = Karta(h[0], h[1], iloscpostaci*110+200, 400)
+                    tablicaObiektow.append(karta5)
+                    if (int(h[1]) == 14):
+                        punktyZAsemGracza += 10
+                        punktyGracza += 1
+                    else:
+                        punktyZAsemGracza += get_wartosc(int(h[1]))
+                        punktyGracza += get_wartosc(int(h[1]))
+                    print("Z asem ", punktyZAsemGracza)
+                    print(" Bez asa ", punktyGracza)
+                    pygame.display.update()
+                    last_created_time = current_time
+
+
+                if(punktyGracza>21):
+                    for karta in tablicaObiektow:
+                        karta.draw(window)
+                        pygame.display.update()
+
+                    x = przegrales(punktyGracza, punktyBrukiera)
+                    if x == 7:
+                        run = False
+                    return 7
 
 def main(): #to jest menu
 
