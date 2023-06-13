@@ -12,7 +12,7 @@ def level_one(iloscTali):
     run=True
     clock=0
     punkty=0
-    tlo_gra=pygame.image.load("zdjecia\Beznazwy.png")
+    tlo_gra=pygame.image.load('zdjecia/Beznazwy.png')
     punktyBrukiera=0
     kartygracza=0
     punktyGracza=0
@@ -24,8 +24,8 @@ def level_one(iloscTali):
     iloscpostaci=0
     start_time = pygame.time.get_ticks()
     while run:
-        rewerse = pygame.image.load("zdjecia\wrew.png")
-        cofanie_button = Button(600, 50, "zdjecia\cofanie.png", "zdjecia\cofanie1.png")
+        rewerse = pygame.image.load('zdjecia/wrew.png')
+        cofanie_button = Button(600, 50, 'zdjecia/cofanie.png', 'zdjecia/cofanie1.png')
         current_time = time.time()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -45,7 +45,7 @@ def level_one(iloscTali):
 
         window.blit(ilosc_punktow_aktualna, (0, 400))
         if(len(tablicaObiektow)<2):
-            losujkartePrzycisk = Button(600, 200, "D:\karty\przyciskLOS.png", "D:\karty\przyciskLOS1.png")
+            losujkartePrzycisk = Button(600, 200, "zdjecia/przyciskLOS.png", "zdjecia/przyciskLOS1.png")
 
             losujkartePrzycisk.draw(window)
 
@@ -114,7 +114,7 @@ def level_one(iloscTali):
         if(punkty<21 and len(tablicaObiektow)>=4 and len(tablicaObiektow)<6 and przyciskDoboruBool==True):
 
             #x=losuj_karte_pocztek(karty2, kolory2)
-            przyciskDobierania=Button(600, 200, "D:\karty\dobierz.png", "D:\karty\dobierz1.png")
+            przyciskDobierania=Button(600, 200, "zdjecia/dobierz.png", "zdjecia/dobierz1.png")
             przyciskDobierania.draw(window)
             if(przyciskDobierania.tick()):
                 if current_time - last_created_time > 1.0:  # utwórz nowy obiekt co 1 sekundę
@@ -151,7 +151,7 @@ def level_one(iloscTali):
             elapsed_time = (pygame.time.get_ticks() - start_time) / 1000
 
             #przycisk passu tworzenie
-            przyciskPassu=Button(30,200, "D:\karty\pass.png", "D:\karty\pass1.png")
+            przyciskPassu=Button(30,200, "zdjecia/pass.png", "zdjecia/pass1.png")
             przyciskPassu.draw(window)
 
             if(przyciskPassu.tick()):
@@ -365,7 +365,7 @@ def level_one(iloscTali):
                     
                     if(len(tablicaObiektowBrukier)==3 and punktyBrukiera<punktyGracza):
                         #brukier dobiera 4 karte
-                        if (punktyBrukiera == punktyGracza):
+                        if punktyBrukiera == punktyGracza:
                             if current_time - last_created_time > 1.0:
                                 for karta in tablicaObiektow:
                                     karta.draw(window)
@@ -381,7 +381,7 @@ def level_one(iloscTali):
 
                         tablicaObiektow.append(karta123)
                         tablicaObiektowBrukier.append(karta123)
-                        if (punktyBrukiera == punktyGracza):
+                        if punktyBrukiera == punktyGracza:
                             for karta in tablicaObiektow:
                                 karta.draw(window)
                                 pygame.display.update()
@@ -390,7 +390,7 @@ def level_one(iloscTali):
                             if x == 1:
                                 run = False
                             return 1
-                        if(punktyBrukiera>punktyGracza and punktyBrukiera<22):
+                        if punktyBrukiera>punktyGracza and punktyBrukiera<22:
                             for karta in tablicaObiektow:
                                 karta.draw(window)
                                 pygame.display.update()
@@ -406,7 +406,7 @@ def level_one(iloscTali):
                             if x == 7:
                                 run = False
                             return 7
-                        if (punktyBrukiera>21):
+                        if punktyBrukiera>21:
                             for karta in tablicaObiektow:
                                 karta.draw(window)
                                 pygame.display.update()
@@ -415,7 +415,7 @@ def level_one(iloscTali):
                             if x == 5:
                                 run = False
                             return 5
-                        if(punktyBrukiera<punktyGracza):
+                        if punktyBrukiera<punktyGracza:
                             for karta in tablicaObiektow:
                                 karta.draw(window)
                                 pygame.display.update()
@@ -498,28 +498,28 @@ def main(): #to jest menu
 
 
 
-    matrix=pygame.image.load("zdjecia\poop.png")
-    tlo_menu = pygame.image.load("zdjecia\menu.png")
+    matrix=pygame.image.load('zdjecia/poop.png')
+    tlo_menu = pygame.image.load('zdjecia/menu.png')
     run=True
-    play_button=Button(100, 200,"zdjecia\przycisk.png", "zdjecia\przycisk_hovered.png")
-    tworcy_butoon=Button(100, 420, "zdjecia\zdjtworcy.png", "zdjecia\zdjtworcy1.png")
+    play_button=Button(100, 200,'zdjecia/przycisk.png', 'zdjecia/przycisk_hovered.png')
+    tworcy_butoon=Button(100, 420, 'zdjecia/zdjtworcy.png', 'zdjecia/zdjtworcy1.png')
 
     iloscTali=1
     window.blit(tlo_menu, (0, 0))
     plik1 = open("zapisyWPR.txt", "w")
     while run:
-        reser_button = Button(100, 300, "zdjecia\wreser.png", "zdjecia\wreset1.png")
+        reser_button = Button(100, 300, "zdjecia/wreser.png", "zdjecia/wreset1.png")
         clock += pygame.time.Clock().tick(60) / 1000  # maksymalnie 60 fps
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 plik1.close()
                 run = False
                     
-        wygranapunkyM = pygame.font.Font.render(pygame.font.SysFont("arial", 50), str(wygrana) + ("-wygranych"), True,
+        wygranapunkyM = pygame.font.Font.render(pygame.font.SysFont("arial", 50), str(wygrana) + "-wygranych", True,
                                                 (0, 0, 0))
-        przegranPunktyM = pygame.font.Font.render(pygame.font.SysFont("arial", 50), str(przegrana) + ("-przegranych"),
+        przegranPunktyM = pygame.font.Font.render(pygame.font.SysFont("arial", 50), str(przegrana) + "-przegranych",
                                                   True, (0, 0, 0))
-        remisPunktyM = pygame.font.Font.render(pygame.font.SysFont("arial", 50), str(remis) + ("-remis"), True,
+        remisPunktyM = pygame.font.Font.render(pygame.font.SysFont("arial", 50), str(remis) + "-remis", True,
                                                (0, 0, 0))
         if play_button.tick():
            y=level_one(iloscTali)
