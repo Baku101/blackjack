@@ -6,7 +6,7 @@ pygame.font.init()
 
 def level_one(iloscTali):
     talia=Talia(iloscTali)
-    PrzyciskPasu=True
+    przycisk_pasu=True
     punktyZAsemGracza=0
     punktyZAsemBrukiera=0
     run=True
@@ -43,7 +43,7 @@ def level_one(iloscTali):
 
 
 
-        window.blit(ilosc_punktow_aktualna, (0, 400)
+        window.blit(ilosc_punktow_aktualna, (0, 400))
         if(len(tablicaObiektow)<2):
             losujkartePrzycisk = Button(600, 200, "D:\karty\przyciskLOS.png", "D:\karty\przyciskLOS1.png")
 
@@ -76,7 +76,7 @@ def level_one(iloscTali):
                     punktyGracza+=get_wartosc(int(x[1]))
                 print("Z asem ", punktyZAsemGracza)
                 print(" Bez asa ", punktyGracza)
-          if(len(tablicaObiektow)==2): #1 karta brukiera
+        if(len(tablicaObiektow)==2): #1 karta brukiera
             if current_time - last_created_time > 1.0:
                 p=talia.losuj_karte()
                 if (int(p[1]) == 14):
@@ -146,7 +146,7 @@ def level_one(iloscTali):
                     if x == 7:
                         run = False
                     return 7
-if( PrzyciskPasu==True and len(tablicaObiektow)>=4):
+    if( PrzyciskPasu==True and len(tablicaObiektow)>=4):
 
             elapsed_time = (pygame.time.get_ticks() - start_time) / 1000
 
@@ -320,7 +320,7 @@ def main(): #to jest menu
                plik1.write(str(wygrana)+"\n")
                plik1.write(str(przegrana)+"\n")
                plik1.write(str(remis)+"\n")
-       if reser_button.tick():
+        if reser_button.tick():
           wygrana=0
           przegrana=0
           remis=0
@@ -333,6 +333,7 @@ def main(): #to jest menu
         reser_button.draw(window)
         play_button.draw(window)
         pygame.display.update()
+        
 
 if __name__=="__main__":
 

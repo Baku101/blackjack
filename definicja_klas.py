@@ -1,6 +1,4 @@
 from main import*
-from level_one import *
-
 
 pygame.init() # innicjowanie okna
 window = pygame.display.set_mode((800, 600))
