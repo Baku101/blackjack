@@ -344,6 +344,26 @@ if( PrzyciskPasu==True and len(tablicaObiektow)>=4):
                         if x==1:
                             run=False
                         return 1
+                    if(punktyBrukiera<21 and punktyBrukiera>punktyGracza):
+                        if current_time - last_created_time > 1.0:
+                            for karta in tablicaObiektow:
+                                karta.draw(window)
+                                pygame.display.update()
+                            ilosc_punktow_aktualna = pygame.font.Font.render(pygame.font.SysFont("arial", 200),
+                                                                             str(punktyGracza), True,
+                                                                             (0, 0, 0))
+                            ilosc_punktow_aktualna_brukiera = pygame.font.Font.render(pygame.font.SysFont("arial", 200),
+                                                                                      str(punktyBrukiera), True,
+                                                                                      (0, 0, 0))
+                            window.blit(ilosc_punktow_aktualna_brukiera, (0, 0))
+                            window.blit(ilosc_punktow_aktualna, (0, 400))
+                            x = przegrales(punktyGracza, punktyBrukiera)
+                            if x == 7:
+                                run = False
+                            last_created_time = current_time
+                            return 7
+                    
+                    
 def main(): #to jest menu
 
     wygrana=0
