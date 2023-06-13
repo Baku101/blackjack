@@ -335,7 +335,15 @@ if( PrzyciskPasu==True and len(tablicaObiektow)>=4):
                             if x == 5:
                                 run = False
                             return 5
+                     if(punktyBrukiera==punktyGracza):
+                        for karta in tablicaObiektow:
+                            karta.draw(window)
+                            pygame.display.update()
 
+                        x=remis()
+                        if x==1:
+                            run=False
+                        return 1
 def main(): #to jest menu
 
     wygrana=0
