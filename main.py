@@ -264,7 +264,34 @@ if( PrzyciskPasu==True and len(tablicaObiektow)>=4):
                             run = False
                         return 7
                         last_created_time = current_time
-                    
+                if(punktyBrukiera<=punktyGracza and len(tablicaObiektowBrukier)>1 and punktyBrukiera<21):
+                    #brukier dobiera 3 karte
+                    b = talia.losuj_karte()
+                    if (int(b[1]) == 14):
+                        punktyZAsemBrukiera += 10
+                        punktyBrukiera += 1
+                    else:
+                        punktyZAsemBrukiera += get_wartosc(int(b[1]))
+                        punktyBrukiera += get_wartosc(int(b[1]))
+                    print("BBBB Z asem ", punktyZAsemBrukiera)
+                    print("BBBB  Bez asa ", punktyBrukiera)
+                    karta12 = Karta(b[0], b[1], 510, 50)
+                    tablicaObiektow.append(karta12)
+                    tablicaObiektowBrukier.append(karta12)
+                    for karta in tablicaObiektow:
+                        karta.draw(window)
+                        pygame.display.update()
+                    if (punktyBrukiera == punktyGracza):
+                        if current_time - last_created_time > 1.0:
+                            for karta in tablicaObiektow:
+                                karta.draw(window)
+                                pygame.display.update()
+
+                            x = remis()
+                            if x == 1:
+                                run = False
+
+                            return 1                    
 def main(): #to jest menu
 
     wygrana=0
@@ -333,6 +360,7 @@ def main(): #to jest menu
         reser_button.draw(window)
         play_button.draw(window)
         pygame.display.update()
+        
 
 if __name__=="__main__":
 
